@@ -19,26 +19,34 @@ const display=(meals)=>{
     // console.log(meals);
     const main=document.getElementById('main');
     meals.forEach(meal=>{
-        console.log(meal)
+        // console.log(meal)
+        const para=meal.strInstructions.slice(0,100);
+        // console.log(para);
         const div=document.createElement('div')
+        div.classList.add('col')
         div.innerHTML=`
         <div class="col">
         <div class="card" style="width: 18rem;">
             <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${meal.strMeal}</h5>
-              <h4 class=" text-muted">${meal.strCategory}  ${meal.strArea} </h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h4 class=" text-muted">Food Name: ${meal.strCategory}  Country: ${meal.strArea} </h4>
+              <p class="card-text">${para}</p>
+              <button onclick="userBtn()">click me </button>
             </div>
           </div>
        </div>
         `;
         main.appendChild(div);
     })
-    
+   
     // for(const meal of meal){
     //     console.log(meal);
 
     // }
+};
+
+const userBtn=(meal)=>{
+    // console.log(meal)
+    console.log('boos connect hoise');
 }

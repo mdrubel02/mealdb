@@ -11,18 +11,16 @@ document.getElementById('button-addon').addEventListener('click',()=>{
 
     fetch(url)
     .then(res=>res.json())
-    .then(data =>display(data))
+    .then(data =>display(data.meals))
 });
 
 
 const display=(meals)=>{
     console.log(meals);
     const main=document.getElementById('main');
-    // meals.forEach(meal =>{
-    //     // console.log(meal);
-    // })
-    // const div=document.createElement('div');
-    // div.innerHTML=`
+    meals.forEach(meal=>console.log(meal.strMeal))
+    // for(const meal of meal){
+    //     console.log(meal);
 
-    // `
+    // }
 }
